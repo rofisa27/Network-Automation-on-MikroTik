@@ -1,0 +1,4 @@
+ip firewall mangle add action=mark-connection chain=prerouting in-interface=ether2 new-connection-mark=conn-1 nth=2,1
+ip firewall mangle add action=mark-connection chain=prerouting in-interface=ether2 new-connection-mark=conn-2 nth=2,2
+ip firewall mangle add action=mark-routing chain=prerouting connection-mark=conn-1 new-routing-mark=jalur-1 passthrough=no
+ip firewall mangle add action=mark-routing chain=prerouting connection-mark=conn-2 new-routing-mark=jalur-2 passthrough=no
